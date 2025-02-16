@@ -22,7 +22,7 @@
    cd your-repo
 mvn clean install
 docker-compose up --build
-3. Постройте проект с помощью Maven:
+3.  Постройте проект с помощью Maven:
   mvn clean install
-4. Запустите приложение с использованием Docker Compose:
+4.  Запустите приложение с использованием Docker Compose:
   docker-compose up --build
