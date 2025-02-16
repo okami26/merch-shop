@@ -17,7 +17,9 @@
 1. Убедитесь, что у вас установлен [Docker](https://www.docker.com/get-started) и [Docker Compose](https://docs.docker.com/compose/install/).
 2. Клонируйте репозиторий:
 
-   
+   ```bash
+   git clone https://github.com/okami26/merch-shop.git
+   cd your-repo
 
 4. Постройте проект с помощью Maven:
   mvn clean install
