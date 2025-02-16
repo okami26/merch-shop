@@ -21,7 +21,9 @@
    git clone https://github.com/okami26/merch-shop.git
    cd your-repo
 
-4. Постройте проект с помощью Maven:
-  mvn clean install
-3. Запустите приложение с использованием Docker Compose:
-  docker-compose up --build
+3. Постройте проект с помощью Maven:
+   ```bash
+     mvn clean install
+4. Запустите приложение с использованием Docker Compose:
+   ```bash
+     docker-compose up --build
