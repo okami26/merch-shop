@@ -7,28 +7,28 @@ services:
     ports:
       - "5430:5432"
     environment:
-      POSTGRES_DB: merch-shop  # Название базы данных
-      POSTGRES_USER: admin  # Имя пользователя
-      POSTGRES_PASSWORD: admin  # Пароль
+      POSTGRES_DB: merch-shop
+      POSTGRES_USER: admin 
+      POSTGRES_PASSWORD: admin  
     volumes:
-      - db_data_merch:/var/lib/postgresql/data  # Хранение данных
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Скопировать init.sql в контейнер
+      - db_data_merch:/var/lib/postgresql/data 
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
 
   app:
-    image: openjdk:17-jdk-alpine  # Используем образ с JDK 17
+    image: openjdk:17-jdk-alpine 
     container_name: merch_app
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"  # Проброс порта
+      - "8080:8080"
     depends_on:
-      - db  # Приложение зависит от базы данных
+      - db 
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/merch-shop  # URL подключения к базе данных
-      SPRING_DATASOURCE_USERNAME: admin  # Имя пользователя
-      SPRING_DATASOURCE_PASSWORD: admin  # Пароль базы данных
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update  # Автоматическое создание схемы
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/merch-shop  
+      SPRING_DATASOURCE_USERNAME: admin 
+      SPRING_DATASOURCE_PASSWORD: admin 
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update  
 
 volumes:
   db_data_merch:
